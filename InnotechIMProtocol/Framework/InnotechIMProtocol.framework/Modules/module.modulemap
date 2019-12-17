@@ -1,0 +1,6 @@
+framework module InnotechIMProtocol {
+  umbrella header "InnotechIMProtocol.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,16 @@
+PODS:
+  - InnotechIMProtocol (0.1.0)
+
+DEPENDENCIES:
+  - InnotechIMProtocol (from `../`)
+
+EXTERNAL SOURCES:
+  InnotechIMProtocol:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  InnotechIMProtocol: 5d239c42de13a78fa167da63dd1aa5ef476bb33a
+
+PODFILE CHECKSUM: f298ad011576b42673d1ba40bb2701e72682ec44
+
+COCOAPODS: 1.8.3

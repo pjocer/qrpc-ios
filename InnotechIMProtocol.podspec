@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'InnotechIMProtocol'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of InnotechIMProtocol.'
+  s.summary          = 'a iOS library that lets iOS clients access a qRPC service. You can find out much more about qRPC.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -17,26 +17,15 @@ Pod::Spec.new do |s|
 #   * Write the description between the DESC delimiters below.
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
-  s.description      = <<-DESC
-TODO: Add long description of the pod here.
-                       DESC
-
-  s.homepage         = 'https://github.com/jiguanhu/InnotechIMProtocol'
+  s.homepage         = 'https://github.com/pjocer/QRPC-iOS'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'jiguanhu' => 'jiguanhu@innotechx.com' }
-  s.source           = { :git => 'https://github.com/jiguanhu/InnotechIMProtocol.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.source           = { :git => 'git@github.com:pjocer/QRPC-iOS.git', :tag => s.version.to_s }
 
+  s.requires_arc        = true
   s.ios.deployment_target = '8.0'
-
-  s.source_files = 'InnotechIMProtocol/Classes/**/*'
+  s.xcconfig = { 'ENABLE_BITCODE' => 'NO', 'OTHER_LDFLAGS' =>'-ObjC'}
   
-  # s.resource_bundles = {
-  #   'InnotechIMProtocol' => ['InnotechIMProtocol/Assets/*.png']
-  # }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.vendored_frameworks = 'InnotechIMProtocol/Framework/InnotechIMProtocol.framework'
 end
