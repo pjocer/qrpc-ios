@@ -1,0 +1,6 @@
+use_frameworks!
+target 'InnotechIMProtocol_Tests' do
+  pod 'InnotechIMProtocol', :path => '../'
+  
+  
+end
