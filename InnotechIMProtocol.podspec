@@ -17,11 +17,11 @@ Pod::Spec.new do |s|
 #   * Write the description between the DESC delimiters below.
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
-  s.homepage         = 'https://github.com/pjocer/QRPC-iOS'
+  s.homepage         = 'https://github.com/pjocer/qrpc-ios'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'jiguanhu' => 'jiguanhu@innotechx.com' }
-  s.source           = { :git => 'git@github.com:pjocer/QRPC-iOS.git', :tag => s.version.to_s }
+  s.source           = { :git => 'git@github.com:pjocer/qrpc-ios.git', :tag => s.version.to_s }
 
   s.requires_arc        = true
   s.ios.deployment_target = '8.0'
