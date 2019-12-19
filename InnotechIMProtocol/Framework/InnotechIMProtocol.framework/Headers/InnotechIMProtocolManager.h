@@ -34,6 +34,7 @@ typedef void(^InnotechIMProtocolReceiveHandler)(INXSCommandInfo * _Nullable data
  @param err error
  */
 - (void)protocolManagerDidDisconnect:(InnotechIMProtocolManager *)manager withError:(NSError *)err;
+
 @optional
 
 /**
@@ -47,6 +48,14 @@ typedef void(^InnotechIMProtocolReceiveHandler)(INXSCommandInfo * _Nullable data
  @param info 收到的数据流信息
  */
 - (void)protocolManager:(InnotechIMProtocolManager *)manager didReadData:(INXSCommandInfo *)info;
+
+/**
+ 即将重连
+ 
+ @discussion 只有开启自动重连功能才会回调此方法，且5次重连过程中只会回调一次。
+ @param manager InnotechIMProtocolManager
+ */
+- (void)protocolManagerWillReconnect:(InnotechIMProtocolManager *)manager;
 @end
 
 @interface InnotechIMProtocolManager : NSObject
@@ -82,6 +91,28 @@ typedef void(^InnotechIMProtocolReceiveHandler)(INXSCommandInfo * _Nullable data
  */
 - (void)disconnect;
 
+/**
+ 设置是否开启自动重连
+
+ @discussion 开启重连后，内部会在断开连接后尝试重连5次，失败后才会回调`protocolManagerDidDisconnect:withError:`，默认开启
+ @param aSwitch 开关
+ */
+- (void)setAutoReconnectEnabled:(BOOL)aSwitch;
+
+/**
+ 设置重连阻断指令
+ 
+ @discussion 因发送阻断指令而导致断开连接时，不再继续尝试重连
+ @param cmds 可选类型（`NS_OPTION`）的指令集
+ */
+- (void)setReconnectBlockingCommand:(NSInteger)cmds;
+
+/**
+ 设置重连次数
+
+ @param count `-1`表示无限重连，默认5
+ */
+- (void)setReconnectCount:(NSInteger)count;
 /**
  发送指令消息
 
