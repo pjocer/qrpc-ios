@@ -63,9 +63,11 @@ typedef void(^InnotechIMProtocolReceiveHandler)(INXSCommandInfo * _Nullable data
 /**
  连接状态
  */
-@property (nonatomic, assign, getter=isConnected) BOOL connected;
-@property (nonatomic, assign, getter=isDisconnected) BOOL disconnected;
+@property (nonatomic, assign, getter=isConnected, readonly) BOOL connected;
+@property (nonatomic, assign, getter=isDisconnected, readonly) BOOL disconnected;
 
+@property (nonatomic, copy, nullable, readonly) NSString *connectedHost;
+@property (nonatomic, assign, readonly) uint16_t connectedPort;
 
 /**
  实例方法

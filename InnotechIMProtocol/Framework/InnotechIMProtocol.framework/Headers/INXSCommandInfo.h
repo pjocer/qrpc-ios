@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) NSData *requestID;
 
-@property (nonatomic, copy) NSString *requesrIDString;
+@property (nonatomic, copy) NSString *requestIDString;
 
 @property (nonatomic, assign) int32_t cmd;
 
