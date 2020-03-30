@@ -66,6 +66,9 @@ typedef void(^InnotechIMProtocolReceiveHandler)(INXSCommandInfo * _Nullable data
 @property (nonatomic, assign, getter=isConnected, readonly) BOOL connected;
 @property (nonatomic, assign, getter=isDisconnected, readonly) BOOL disconnected;
 
+/**
+ socket interface
+ */
 @property (nonatomic, copy, nullable, readonly) NSString *connectedHost;
 @property (nonatomic, assign, readonly) uint16_t connectedPort;
 
@@ -102,9 +105,9 @@ typedef void(^InnotechIMProtocolReceiveHandler)(INXSCommandInfo * _Nullable data
 - (void)setAutoReconnectEnabled:(BOOL)aSwitch;
 
 /**
- 设置重连阻断指令
+ 设置重连阻断指令集
  
- @discussion 因发送阻断指令而导致断开连接时，不再继续尝试重连
+ @discussion 因发送阻断指令集而导致断开连接时，不再继续尝试重连
  @param cmds 可选类型（`NS_OPTION`）的指令集
  */
 - (void)setReconnectBlockingCommand:(NSInteger)cmds;
