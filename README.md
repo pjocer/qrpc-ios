@@ -5,7 +5,7 @@
 ### Install
 
 ```
-pod 'InnotechIMSDK/Protocol'
+pod 'InnotechIMProtocol'
 ```
 
 ### Usage
